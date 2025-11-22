@@ -28,7 +28,7 @@ local_css("assets/style.css")
 # --- HERO SECTION ---
 col1, col2 = st.columns([2, 1], gap="small")
 with col1:
-    st.title("Hi, I'm Sandip (DEBUG MODE 🔴)")
+    st.title("Hi, I'm Sandip")
     st.subheader("Aspiring Data Analyst & Data Scientist")
     st.write(
         """
@@ -37,17 +37,11 @@ with col1:
         """
     )
     st.write("---")
-    import os
-    st.write(f"Current working directory: {os.getcwd()}")
-    st.write("Files in current directory:")
-    st.write(os.listdir('.'))
-    if os.path.exists('assets'):
-        st.write("Files in assets folder:")
-        st.write(os.listdir('assets'))
     
+    # Resume download button
+    import os
     resume_path = "assets/Sandip_Resume.pdf"
     if os.path.exists(resume_path):
-        st.success(f"Resume found at: {resume_path}")
         with open(resume_path, "rb") as f:
             pdf_data = f.read()
         st.download_button(
@@ -56,8 +50,6 @@ with col1:
             file_name="Sandip_Resume.pdf",
             mime="application/pdf",
         )
-    else:
-        st.error(f"Resume NOT found at {resume_path}")
 
 with col2:
     # Logic to display profile picture
