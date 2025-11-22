@@ -28,7 +28,7 @@ local_css("assets/style.css")
 # --- HERO SECTION ---
 col1, col2 = st.columns([2, 1], gap="small")
 with col1:
-    st.title("Hi, I'm Sandip")
+    st.title("Hi, I'm Sandip (DEBUG MODE 🔴)")
     st.subheader("Aspiring Data Analyst & Data Scientist")
     st.write(
         """
