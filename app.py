@@ -37,12 +37,17 @@ with col1:
         """
     )
     st.write("---")
-    st.download_button(
-        label="📄 Download Resume",
-        data=open("Sandip_Resume.pdf", "rb").read(),
-        file_name="Sandip_Resume.pdf",
-        mime="application/pdf",
-    )
+    import os
+    if os.path.exists("Sandip_Resume.pdf"):
+        st.success("Resume file found!")
+        st.download_button(
+            label="📄 Download Resume",
+            data=open("Sandip_Resume.pdf", "rb").read(),
+            file_name="Sandip_Resume.pdf",
+            mime="application/pdf",
+        )
+    else:
+        st.error("Resume file NOT found. Please check file name.")
 
 with col2:
     # Logic to display profile picture
