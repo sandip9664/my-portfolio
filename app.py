@@ -38,17 +38,26 @@ with col1:
     )
     st.write("---")
     import os
+    st.write(f"Current working directory: {os.getcwd()}")
+    st.write("Files in current directory:")
+    st.write(os.listdir('.'))
+    if os.path.exists('assets'):
+        st.write("Files in assets folder:")
+        st.write(os.listdir('assets'))
+    
     resume_path = "assets/Sandip_Resume.pdf"
     if os.path.exists(resume_path):
-        st.success("Resume file found in assets!")
+        st.success(f"Resume found at: {resume_path}")
+        with open(resume_path, "rb") as f:
+            pdf_data = f.read()
         st.download_button(
             label="📄 Download Resume",
-            data=open(resume_path, "rb").read(),
+            data=pdf_data,
             file_name="Sandip_Resume.pdf",
             mime="application/pdf",
         )
     else:
-        st.error(f"Resume file NOT found at {resume_path}")
+        st.error(f"Resume NOT found at {resume_path}")
 
 with col2:
     # Logic to display profile picture
