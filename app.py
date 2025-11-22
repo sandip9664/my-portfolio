@@ -38,16 +38,17 @@ with col1:
     )
     st.write("---")
     import os
-    if os.path.exists("Sandip_Resume.pdf"):
-        st.success("Resume file found!")
+    resume_path = "assets/Sandip_Resume.pdf"
+    if os.path.exists(resume_path):
+        st.success("Resume file found in assets!")
         st.download_button(
             label="📄 Download Resume",
-            data=open("Sandip_Resume.pdf", "rb").read(),
+            data=open(resume_path, "rb").read(),
             file_name="Sandip_Resume.pdf",
             mime="application/pdf",
         )
     else:
-        st.error("Resume file NOT found. Please check file name.")
+        st.error(f"Resume file NOT found at {resume_path}")
 
 with col2:
     # Logic to display profile picture
