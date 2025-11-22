@@ -37,12 +37,12 @@ with col1:
         """
     )
     st.write("---")
-    # st.download_button(
-    #     label="📄 Download Resume",
-    #     data="Resume Content Here", # Replace with actual resume file
-    #     file_name="Sandip_Resume.pdf",
-    #     mime="application/pdf",
-    # )
+    st.download_button(
+        label="📄 Download Resume",
+        data=open("Sandip_Resume.pdf", "rb").read(),
+        file_name="Sandip_Resume.pdf",
+        mime="application/pdf",
+    )
 
 with col2:
     # Logic to display profile picture
