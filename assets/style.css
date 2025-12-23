@@ -30,7 +30,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     color: var(--heading-color);
     font-weight: 700;
@@ -429,7 +434,8 @@ ul {
     margin-bottom: 20px;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 12px;
     background: rgba(0, 0, 0, 0.3);
@@ -446,9 +452,96 @@ textarea {
     resize: vertical;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.2);
+}
+
+/* Experience Section */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.experience-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(244, 114, 182, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-icon {
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.experience-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.experience-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.experience-info h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.experience-info p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.experience-cert {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.experience-cert:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .experience-card {
+        flex-direction: column;
+    }
 }
 
 /* Footer */
